@@ -116,3 +116,9 @@ The assistant may draft and organize sections, but human validator review is req
 - Whether model changes require new validation.
 - Whether evidence is sufficient.
 - Whether controls are effective.
+
+## Final DOCX Drafting
+
+When the user asks for a final Word draft, use the prior PR report as the DOCX template where available. The helper `src/replace_docx_sections.py` can create a semi-automated DOCX draft by replacing recognized section bodies with reviewed Markdown section drafts.
+
+Do not treat the generated DOCX as final. Instruct the user to review formatting, headings, numbering, figures, tables, comments, tracked changes, page breaks, headers, and footers before delivery.

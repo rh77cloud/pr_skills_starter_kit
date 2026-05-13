@@ -69,7 +69,8 @@ The repository is ready for work use when a user can:
 5. Provide local paths to current-cycle evidence.
 6. Update Sections 2.1.1 through 2.1.8 one section at a time.
 7. Draft Section 1.3 after supporting sections are complete.
-8. Review and finalize the output with human validator judgment.
+8. Optionally insert reviewed section drafts into a copy of the prior PR Word report.
+9. Review and finalize the output with human validator judgment.
 
 ## Local Confidential Evidence
 
@@ -86,3 +87,14 @@ The real `local_inputs/` folder is ignored by git.
 The preferred workflow is to place important OGM graphs and tables in the 2LOD OGM assessment file along with reviewer notes. The notes should explain the metric, period, threshold, result, breach or exception status, management explanation, 2LOD assessment, and recommended PR language.
 
 This keeps graph/table interpretation under reviewer control and gives the agent a clear evidence basis for updating PR report discussion.
+
+## Final DOCX Delivery
+
+The recommended final delivery process is:
+
+1. Treat the prior PR report as the Word template.
+2. Draft and review each updated section in Markdown.
+3. Use `src/replace_docx_sections.py` to create a semi-automated DOCX draft.
+4. Review the generated DOCX manually before delivery.
+
+The DOCX helper is not a substitute for human review. It is intended to reduce copy/paste effort while preserving the prior report as the formatting base.

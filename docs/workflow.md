@@ -141,3 +141,20 @@ After human review, assemble the Markdown section files:
 ```bash
 python src/assemble_report.py outputs/INV_XXXX/sections outputs/INV_XXXX/pr_report_draft.md
 ```
+
+## Optional: Create a Semi-Automated DOCX Draft
+
+Use the prior PR report as the Word template and replace reviewed section text into a copy:
+
+```bash
+python src/replace_docx_sections.py local_inputs/prior_pr_report/prior_pr_report.docx outputs/INV_XXXX/sections outputs/INV_XXXX/final_pr_report_draft.docx
+```
+
+The helper:
+
+- Keeps the original template DOCX unchanged.
+- Keeps recognized section heading paragraphs in place.
+- Replaces body text between recognized headings with reviewed Markdown drafts.
+- Supports section files named according to the recommended filenames above.
+
+Human review is required after generation. Check headings, numbering, tables, charts, comments, tracked changes, page breaks, headers, footers, and any graph/table placement before final delivery.

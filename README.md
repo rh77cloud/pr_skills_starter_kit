@@ -42,7 +42,8 @@ The goal is to help an AI assistant update a prior PR report into a current-cycl
 │   ├── assemble_report.py
 │   ├── check_intake.py
 │   ├── extract_docx_text.py
-│   └── extract_pdf_text.py
+│   ├── extract_pdf_text.py
+│   └── replace_docx_sections.py
 └── templates/
     ├── intake_template.md
     ├── ogm_graph_table_notes_template.md
@@ -64,7 +65,7 @@ The goal is to help an AI assistant update a prior PR report into a current-cycl
 - `templates/ogm_graph_table_notes_template.md`: Reusable note block for OGM graphs, tables, and reviewer exhibit assessments.
 - `templates/risk_rating_prompt.md`: Reusable prompt for Section 1.3.
 - `local_inputs.example/`: Safe example folder structure for confidential source evidence.
-- `src/`: Lightweight helper scripts for checking intake, extracting DOCX/PDF text, and assembling section drafts.
+- `src/`: Lightweight helper scripts for checking intake, extracting DOCX/PDF text, assembling section drafts, and creating a semi-automated DOCX draft.
 
 ## Skills
 
@@ -147,6 +148,14 @@ Assemble reviewed Markdown section drafts into one Markdown report draft:
 python src/assemble_report.py outputs/INV_XXXX/sections outputs/INV_XXXX/pr_report_draft.md
 ```
 
+Create a semi-automated Word draft from a prior PR report template:
+
+```bash
+python src/replace_docx_sections.py local_inputs/prior_pr_report/prior_pr_report.docx outputs/INV_XXXX/sections outputs/INV_XXXX/final_pr_report_draft.docx
+```
+
+This helper keeps the original DOCX as the template and replaces recognized section bodies, such as `2.1.1` through `2.1.8` and `1.3`, with reviewed Markdown section drafts. Human review is required before delivery, especially for reports with complex formatting, tables, figures, comments, tracked changes, or section breaks.
+
 ## Required Intake Information
 
 For a typical PR update, prepare the following inputs:
@@ -207,6 +216,7 @@ These skills support drafting, but they do not replace validator judgment. A qua
 
 - Add sanitized examples for Sections 2.1.2 through 2.1.8 and 1.3.
 - Add a sanitized example of OGM graph/table notes and updated PR discussion.
+- Add a rendered DOCX QA checklist for final Word drafts.
 - Add optional VS Code task files for common workflows.
 
 ## Uploading to GitHub
