@@ -51,6 +51,7 @@ pr_skills_starter_kit/
 ├── src/
 │   ├── check_intake.py
 │   ├── extract_docx_text.py
+│   ├── extract_pdf_text.py
 │   └── assemble_report.py
 ├── templates/
 │   ├── intake_template.md

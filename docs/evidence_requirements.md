@@ -43,6 +43,18 @@ For a first PR report, collect:
 - Findings appendix or finding descriptions, if applicable.
 - Prior validation report, if available and useful.
 
+The prior validation report may be provided as a PDF. Store it under:
+
+```text
+local_inputs/prior_validation/
+```
+
+If the agent cannot directly read the PDF, extract text with:
+
+```bash
+python src/extract_pdf_text.py local_inputs/prior_validation/prior_validation_report.pdf -o outputs/INV_XXXX/source_text/prior_validation_report.txt
+```
+
 ## Recommended 2LOD File Name
 
 Use this convention when possible:

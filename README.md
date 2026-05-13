@@ -41,7 +41,8 @@ The goal is to help an AI assistant update a prior PR report into a current-cycl
 ├── src/
 │   ├── assemble_report.py
 │   ├── check_intake.py
-│   └── extract_docx_text.py
+│   ├── extract_docx_text.py
+│   └── extract_pdf_text.py
 └── templates/
     ├── intake_template.md
     ├── ogm_prompt.md
@@ -61,7 +62,7 @@ The goal is to help an AI assistant update a prior PR report into a current-cycl
 - `templates/ogm_prompt.md`: Reusable prompt for Section 2.1.6.
 - `templates/risk_rating_prompt.md`: Reusable prompt for Section 1.3.
 - `local_inputs.example/`: Safe example folder structure for confidential source evidence.
-- `src/`: Lightweight helper scripts for checking intake, extracting DOCX text, and assembling section drafts.
+- `src/`: Lightweight helper scripts for checking intake, extracting DOCX/PDF text, and assembling section drafts.
 
 ## Skills
 
@@ -122,6 +123,18 @@ Extract text from a DOCX file for easier agent review:
 
 ```bash
 python src/extract_docx_text.py local_inputs/prior_pr_report/prior_pr.docx -o outputs/INV_XXXX/source_text/prior_pr.txt
+```
+
+Extract text from a PDF file, such as a prior validation report:
+
+```bash
+python src/extract_pdf_text.py local_inputs/prior_validation/prior_validation_report.pdf -o outputs/INV_XXXX/source_text/prior_validation_report.txt
+```
+
+PDF extraction requires either `pypdf` or `PyPDF2`. If needed, install one:
+
+```bash
+python -m pip install pypdf
 ```
 
 Assemble reviewed Markdown section drafts into one Markdown report draft:

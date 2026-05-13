@@ -59,6 +59,18 @@ If source materials are DOCX files, optionally extract text for easier agent rev
 python src/extract_docx_text.py local_inputs/prior_pr_report/prior_pr.docx -o outputs/INV_XXXX/source_text/prior_pr.txt
 ```
 
+If source materials are PDF files, such as a prior validation report, optionally extract text:
+
+```bash
+python src/extract_pdf_text.py local_inputs/prior_validation/prior_validation_report.pdf -o outputs/INV_XXXX/source_text/prior_validation_report.txt
+```
+
+PDF extraction requires either `pypdf` or `PyPDF2`. If your work computer does not already have one installed, use:
+
+```bash
+python -m pip install pypdf
+```
+
 ## Step 4: Start the Agent Session
 
 Use this opening prompt with Gemini:
