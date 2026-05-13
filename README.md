@@ -1,25 +1,53 @@
 # PR Skills Starter Kit
 
-This repository contains a starter set of Codex-style Markdown skills for drafting and refreshing Model Risk Management periodic review (PR) report sections.
+This repository contains agent-ready Markdown skills, context files, templates, and workflow notes for drafting and refreshing Model Risk Management periodic review (PR) report sections.
 
-The goal is to help an AI assistant update PR report language consistently while preserving validator judgment, prior report structure, evidence discipline, and formal Model Risk voice.
+The goal is to help an AI assistant update a prior PR report into a current-cycle PR report while preserving validator judgment, prior report structure, evidence discipline, and formal Model Risk voice.
 
 ## What This Includes
 
 ```text
 .
 ├── AGENTS.md
+├── GEMINI.md
 ├── README.md
-└── skills/
-    ├── pr_report_orchestrator/
-    │   └── SKILL.md
-    ├── pr_section_update/
-    │   └── SKILL.md
-    ├── pr_ogm_assessment/
-    │   └── SKILL.md
-    └── pr_risk_rating/
-        └── SKILL.md
+├── docs/
+│   ├── evidence_requirements.md
+│   ├── project_definition.md
+│   ├── section_map.md
+│   └── workflow.md
+├── examples/
+│   ├── sample_intake.md
+│   └── sample_section_2_1_1_output.md
+├── outputs/
+│   └── .gitkeep
+├── skills/
+│   ├── pr_report_orchestrator/
+│   │   └── SKILL.md
+│   ├── pr_section_update/
+│   │   └── SKILL.md
+│   ├── pr_ogm_assessment/
+│   │   └── SKILL.md
+│   └── pr_risk_rating/
+│       └── SKILL.md
+└── templates/
+    ├── intake_template.md
+    ├── ogm_prompt.md
+    ├── risk_rating_prompt.md
+    └── section_update_prompt.md
 ```
+
+## Key Files
+
+- `AGENTS.md`: General agent instructions and repository workflow.
+- `GEMINI.md`: Gemini context file for Gemini CLI and Gemini-assisted agent sessions.
+- `docs/workflow.md`: Clone-and-use workflow for VS Code and Gemini.
+- `docs/section_map.md`: Standard section map used by this repository.
+- `docs/evidence_requirements.md`: Evidence checklist by section.
+- `templates/intake_template.md`: Intake form to complete before drafting.
+- `templates/section_update_prompt.md`: Reusable prompt for Sections 2.1.1 through 2.1.5, 2.1.7, and 2.1.8.
+- `templates/ogm_prompt.md`: Reusable prompt for Section 2.1.6.
+- `templates/risk_rating_prompt.md`: Reusable prompt for Section 1.3.
 
 ## Skills
 
@@ -30,21 +58,35 @@ The goal is to help an AI assistant update PR report language consistently while
 
 ## Intended Workflow
 
-1. Open the repository in Codex.
-2. Ask Codex to read `AGENTS.md`.
+1. Clone the repository and open it in VS Code.
+2. Ask Gemini or another agent to read `GEMINI.md` and `AGENTS.md`.
 3. Provide the prior PR report or similar report guidance.
 4. Provide current-cycle materials, including model documentation, 1LOD ongoing monitoring materials, 2LOD assessment materials, and findings, if any.
-5. Update Sections 2.1.1 through 2.1.8 one section at a time.
-6. Draft Section 1.3 Risk Rating after the supporting sections have been reviewed.
-7. Have a human validator review all conclusions, findings, approvals, and evidence sufficiency.
+5. Complete `templates/intake_template.md`.
+6. Update Sections 2.1.1 through 2.1.8 one section at a time.
+7. Draft Section 1.3 Risk Rating after the supporting sections have been reviewed.
+8. Have a human validator review all conclusions, findings, approvals, and evidence sufficiency.
 
-## Example Prompt
+## VS Code and Gemini Workflow
+
+Clone the repo on your work computer:
+
+```bash
+git clone https://github.com/rh77cloud/pr_skills_starter_kit.git
+cd pr_skills_starter_kit
+code .
+```
+
+Then start with this prompt in Gemini:
 
 ```text
-Read AGENTS.md and use skills/pr_report_orchestrator/SKILL.md.
-I am updating a Tier II PR report.
-First ask me for the required intake information, then help me update Section 2.1.1 using skills/pr_section_update/SKILL.md.
+Read GEMINI.md, AGENTS.md, and skills/pr_report_orchestrator/SKILL.md.
+Use templates/intake_template.md to help me prepare the PR intake.
+After intake is complete, help me update Section 2.1.1 first.
+Ask for missing inputs before drafting.
 ```
+
+For confidential model evidence, keep source files outside the repository or in a local ignored folder. Do not commit model reports, production data, finding appendices, or internal documentation.
 
 ## Required Intake Information
 
@@ -63,6 +105,8 @@ For a typical PR update, prepare the following inputs:
 - Findings appendix or finding descriptions, if applicable.
 - Management responses or remediation updates, if applicable.
 - Target section to update first.
+
+Use `templates/intake_template.md` to collect this information.
 
 ## Section Mapping
 
@@ -101,18 +145,17 @@ These skills support drafting, but they do not replace validator judgment. A qua
 
 ## Recommended Next Build Steps
 
-- Add an intake form for collecting PR inputs.
-- Add prompt templates for each section.
-- Add example source materials and sample generated outputs.
-- Add checks for missing required inputs before drafting.
-- Add a report assembly workflow that combines reviewed sections into a single draft.
+- Add optional scripts to check whether required intake fields are complete.
+- Add optional scripts to assemble reviewed section drafts into a single report draft.
+- Add sanitized examples for Sections 2.1.2 through 2.1.8 and 1.3.
+- Add optional VS Code task files for common workflows.
 
 ## Uploading to GitHub
 
-From this folder, initialize git and push to a new GitHub repository:
+This repository is designed to be cloned and reused. If you fork or create a new version, initialize git and push to a new GitHub repository:
 
 ```bash
-cd /Users/RuiStation/Documents/Playground/pr_skills_starter_kit
+cd /path/to/pr_skills_starter_kit
 git init
 git add .
 git commit -m "Initial commit"

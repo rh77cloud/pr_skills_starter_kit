@@ -26,13 +26,25 @@ When helping with this repository, follow this sequence:
 ## Expected Repository Structure
 
 ```text
-mrv-validation-copilot/
+pr_skills_starter_kit/
 ├── AGENTS.md
+├── GEMINI.md
 ├── README.md
 ├── docs/
 │   ├── project_definition.md
-│   ├── architecture.md
-│   └── section_library.md
+│   ├── workflow.md
+│   ├── section_map.md
+│   └── evidence_requirements.md
+├── examples/
+│   ├── sample_intake.md
+│   └── sample_section_2_1_1_output.md
+├── outputs/
+│   └── .gitkeep
+├── templates/
+│   ├── intake_template.md
+│   ├── section_update_prompt.md
+│   ├── ogm_prompt.md
+│   └── risk_rating_prompt.md
 └── skills/
     ├── pr_report_orchestrator/
     │   └── SKILL.md
