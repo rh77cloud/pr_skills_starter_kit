@@ -13,6 +13,23 @@ For a non-first PR report, collect:
 - Findings appendix or finding descriptions, if applicable.
 - Management responses or remediation updates, if applicable.
 
+## Local Input Folder Convention
+
+Use this local folder structure for confidential evidence:
+
+```text
+local_inputs/
+  prior_pr_report/
+  model_documentation/
+  ogm_1lod/
+  ogm_2lod/
+  findings/
+  management_responses/
+  prior_validation/
+```
+
+The repository includes `local_inputs.example/` as a safe committed template. The real `local_inputs/` folder is ignored by git.
+
 For a first PR report, collect:
 
 - Similar model's prior PR report for guidance.

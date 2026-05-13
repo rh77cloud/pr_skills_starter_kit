@@ -16,16 +16,23 @@ code .
 
 ## Step 2: Prepare Local Evidence
 
-Keep confidential evidence outside the repository, or in an ignored local folder. Recommended local evidence folders include:
+Keep confidential evidence outside the repository, or in an ignored local folder. This repository includes `local_inputs.example/` as a safe folder template. Copy it to `local_inputs/`:
+
+```bash
+cp -R local_inputs.example local_inputs
+```
+
+Recommended local evidence folders include:
 
 ```text
 local_inputs/
-  prior_pr/
+  prior_pr_report/
   model_documentation/
   ogm_1lod/
   ogm_2lod/
   findings/
   management_responses/
+  prior_validation/
 ```
 
 Do not commit confidential evidence to git.
@@ -39,6 +46,18 @@ outputs/INV_XXXX/intake.md
 ```
 
 Fill in the inventory number, model name, cycle periods, material paths, findings, and the section to update first.
+
+Optionally check for obvious blanks:
+
+```bash
+python src/check_intake.py outputs/INV_XXXX/intake.md
+```
+
+If source materials are DOCX files, optionally extract text for easier agent review:
+
+```bash
+python src/extract_docx_text.py local_inputs/prior_pr_report/prior_pr.docx -o outputs/INV_XXXX/source_text/prior_pr.txt
+```
 
 ## Step 4: Start the Agent Session
 
@@ -68,6 +87,21 @@ Use:
 - `templates/section_update_prompt.md` for Sections 2.1.1 through 2.1.5, 2.1.7, and 2.1.8.
 - `templates/ogm_prompt.md` for Section 2.1.6.
 
+Recommended reviewed section filenames:
+
+```text
+outputs/INV_XXXX/sections/
+  1_3_risk_rating.md
+  2_1_1_development_data.md
+  2_1_2_implementation_data.md
+  2_1_3_model_framework.md
+  2_1_4_assumptions_limitations.md
+  2_1_5_mathematical_structure_variables.md
+  2_1_6_ongoing_monitoring.md
+  2_1_7_model_documentation.md
+  2_1_8_governance_controls.md
+```
+
 ## Step 6: Draft Risk Rating Section 1.3
 
 Draft Section 1.3 only after Sections 2.1.1 through 2.1.8 are updated. Use `templates/risk_rating_prompt.md`.
@@ -85,3 +119,11 @@ The risk rating should summarize:
 ## Step 7: Human Review
 
 The generated report language must be reviewed by a qualified validator. Human review is required for evidence sufficiency, findings, approval conclusion, and final risk rating.
+
+## Optional: Assemble Reviewed Sections
+
+After human review, assemble the Markdown section files:
+
+```bash
+python src/assemble_report.py outputs/INV_XXXX/sections outputs/INV_XXXX/pr_report_draft.md
+```

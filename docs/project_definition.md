@@ -36,6 +36,8 @@ This repository should contain reusable workflow assets only:
 - Prompt templates.
 - Sanitized examples.
 - Output folder scaffolding.
+- Safe local input folder examples.
+- Lightweight helper scripts.
 
 Do not commit confidential model reports, production data, finding appendices, model documentation, or bank/internal evidence.
 
@@ -67,3 +69,13 @@ The repository is ready for work use when a user can:
 6. Update Sections 2.1.1 through 2.1.8 one section at a time.
 7. Draft Section 1.3 after supporting sections are complete.
 8. Review and finalize the output with human validator judgment.
+
+## Local Confidential Evidence
+
+Use `local_inputs.example/` as the committed structure template. Copy it to `local_inputs/` on the work machine:
+
+```bash
+cp -R local_inputs.example local_inputs
+```
+
+The real `local_inputs/` folder is ignored by git.

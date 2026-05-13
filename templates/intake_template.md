@@ -37,6 +37,8 @@
 
 - Target section:
 - Desired output location:
+- Working output folder:
+- Source text extraction folder:
 
 ## Section-by-Section Change Log
 

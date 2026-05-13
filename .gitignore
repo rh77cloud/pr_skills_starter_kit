@@ -1,2 +1,4 @@
 .DS_Store
 local_inputs/
+*.docx.tmp
+__pycache__/

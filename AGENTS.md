@@ -38,8 +38,20 @@ pr_skills_starter_kit/
 ├── examples/
 │   ├── sample_intake.md
 │   └── sample_section_2_1_1_output.md
+├── local_inputs.example/
+│   ├── prior_pr_report/
+│   ├── model_documentation/
+│   ├── ogm_1lod/
+│   ├── ogm_2lod/
+│   ├── findings/
+│   ├── management_responses/
+│   └── prior_validation/
 ├── outputs/
 │   └── .gitkeep
+├── src/
+│   ├── check_intake.py
+│   ├── extract_docx_text.py
+│   └── assemble_report.py
 ├── templates/
 │   ├── intake_template.md
 │   ├── section_update_prompt.md

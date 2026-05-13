@@ -19,6 +19,14 @@ The goal is to help an AI assistant update a prior PR report into a current-cycl
 ├── examples/
 │   ├── sample_intake.md
 │   └── sample_section_2_1_1_output.md
+├── local_inputs.example/
+│   ├── findings/
+│   ├── management_responses/
+│   ├── model_documentation/
+│   ├── ogm_1lod/
+│   ├── ogm_2lod/
+│   ├── prior_pr_report/
+│   └── prior_validation/
 ├── outputs/
 │   └── .gitkeep
 ├── skills/
@@ -30,6 +38,10 @@ The goal is to help an AI assistant update a prior PR report into a current-cycl
 │   │   └── SKILL.md
 │   └── pr_risk_rating/
 │       └── SKILL.md
+├── src/
+│   ├── assemble_report.py
+│   ├── check_intake.py
+│   └── extract_docx_text.py
 └── templates/
     ├── intake_template.md
     ├── ogm_prompt.md
@@ -48,6 +60,8 @@ The goal is to help an AI assistant update a prior PR report into a current-cycl
 - `templates/section_update_prompt.md`: Reusable prompt for Sections 2.1.1 through 2.1.5, 2.1.7, and 2.1.8.
 - `templates/ogm_prompt.md`: Reusable prompt for Section 2.1.6.
 - `templates/risk_rating_prompt.md`: Reusable prompt for Section 1.3.
+- `local_inputs.example/`: Safe example folder structure for confidential source evidence.
+- `src/`: Lightweight helper scripts for checking intake, extracting DOCX text, and assembling section drafts.
 
 ## Skills
 
@@ -87,6 +101,34 @@ Ask for missing inputs before drafting.
 ```
 
 For confidential model evidence, keep source files outside the repository or in a local ignored folder. Do not commit model reports, production data, finding appendices, or internal documentation.
+
+To create the ignored local input folder on your work machine:
+
+```bash
+cp -R local_inputs.example local_inputs
+```
+
+Then place confidential files under `local_inputs/`.
+
+## Helper Scripts
+
+Check whether a completed intake file still has obvious blank fields:
+
+```bash
+python src/check_intake.py outputs/INV_XXXX/intake.md
+```
+
+Extract text from a DOCX file for easier agent review:
+
+```bash
+python src/extract_docx_text.py local_inputs/prior_pr_report/prior_pr.docx -o outputs/INV_XXXX/source_text/prior_pr.txt
+```
+
+Assemble reviewed Markdown section drafts into one Markdown report draft:
+
+```bash
+python src/assemble_report.py outputs/INV_XXXX/sections outputs/INV_XXXX/pr_report_draft.md
+```
 
 ## Required Intake Information
 
@@ -145,8 +187,6 @@ These skills support drafting, but they do not replace validator judgment. A qua
 
 ## Recommended Next Build Steps
 
-- Add optional scripts to check whether required intake fields are complete.
-- Add optional scripts to assemble reviewed section drafts into a single report draft.
 - Add sanitized examples for Sections 2.1.2 through 2.1.8 and 1.3.
 - Add optional VS Code task files for common workflows.
 
