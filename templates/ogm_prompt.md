@@ -12,6 +12,7 @@ Use the following materials:
 - Prior PR Section 2.1.6 text: [PRIOR SECTION PATH OR TEXT]
 - 1LOD ongoing monitoring package: [1LOD PATH]
 - 2LOD ongoing monitoring assessment: [2LOD PATH]
+- OGM graph/table notes, if separate from 2LOD assessment: [GRAPH TABLE NOTES PATH OR SUMMARY]
 - Findings, if any: [FINDINGS PATH OR SUMMARY]
 
 Before drafting, confirm:
@@ -21,12 +22,15 @@ Before drafting, confirm:
 4. Breaches, exceptions, overrides, output adjustments, or missing tests.
 5. Relevant findings or observations.
 6. Whether the prior conclusion should remain the same.
+7. Whether the 2LOD assessment includes pasted graphs, tables, or reviewer notes that should update PR graph/table discussion.
 
 Then draft Section 2.1.6 and only create subsections for tests that are actually in scope.
 
 Requirements:
 - Use current-cycle monitoring evidence.
 - Incorporate both 1LOD results and 2LOD assessment.
+- Treat reviewer graph/table notes in the 2LOD assessment as the primary interpreted evidence for exhibit discussion.
+- Do not infer graph or table meaning beyond the reviewer's notes or provided evidence.
 - Do not invent tests, thresholds, breaches, or conclusions.
 - Discuss exceptions or missing tests if present.
 - End with an overall Section 2.1.6 conclusion.

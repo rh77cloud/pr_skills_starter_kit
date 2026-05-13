@@ -86,3 +86,14 @@ If evidence is missing:
 2. Ask the user whether it is available.
 3. Avoid making unsupported conclusions.
 4. If drafting must continue, mark the language as dependent on human confirmation.
+
+## OGM Graphs and Tables
+
+For important OGM graphs, charts, tables, screenshots, and monitoring exhibits, the preferred approach is:
+
+1. Paste the exhibit into the 2LOD OGM assessment file.
+2. Add reviewer notes using `templates/ogm_graph_table_notes_template.md`.
+3. State whether the exhibit should be included in the PR report, used only for narrative discussion, refreshed from a prior-report exhibit, replaced, or removed.
+4. Use the reviewer notes as the primary interpreted evidence for PR drafting.
+
+The agent should not infer unsupported graph/table meaning from visual appearance alone.

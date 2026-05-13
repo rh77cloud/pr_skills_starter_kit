@@ -45,6 +45,7 @@ The goal is to help an AI assistant update a prior PR report into a current-cycl
 │   └── extract_pdf_text.py
 └── templates/
     ├── intake_template.md
+    ├── ogm_graph_table_notes_template.md
     ├── ogm_prompt.md
     ├── risk_rating_prompt.md
     └── section_update_prompt.md
@@ -60,6 +61,7 @@ The goal is to help an AI assistant update a prior PR report into a current-cycl
 - `templates/intake_template.md`: Intake form to complete before drafting.
 - `templates/section_update_prompt.md`: Reusable prompt for Sections 2.1.1 through 2.1.5, 2.1.7, and 2.1.8.
 - `templates/ogm_prompt.md`: Reusable prompt for Section 2.1.6.
+- `templates/ogm_graph_table_notes_template.md`: Reusable note block for OGM graphs, tables, and reviewer exhibit assessments.
 - `templates/risk_rating_prompt.md`: Reusable prompt for Section 1.3.
 - `local_inputs.example/`: Safe example folder structure for confidential source evidence.
 - `src/`: Lightweight helper scripts for checking intake, extracting DOCX/PDF text, and assembling section drafts.
@@ -111,6 +113,8 @@ cp -R local_inputs.example local_inputs
 
 Then place confidential files under `local_inputs/`.
 
+For important OGM graphs and tables, paste the exhibit into the 2LOD OGM assessment file and add reviewer notes using `templates/ogm_graph_table_notes_template.md`. Gemini should use those notes as the interpreted source for updating PR graph/table discussion.
+
 ## Helper Scripts
 
 Check whether a completed intake file still has obvious blank fields:
@@ -157,6 +161,7 @@ For a typical PR update, prepare the following inputs:
 - Current model documentation.
 - Current-cycle 1LOD ongoing monitoring materials.
 - Current-cycle 2LOD ongoing monitoring assessment.
+- OGM graph/table notes, if important exhibits are included in or attached to the 2LOD assessment.
 - Findings appendix or finding descriptions, if applicable.
 - Management responses or remediation updates, if applicable.
 - Target section to update first.
@@ -201,6 +206,7 @@ These skills support drafting, but they do not replace validator judgment. A qua
 ## Recommended Next Build Steps
 
 - Add sanitized examples for Sections 2.1.2 through 2.1.8 and 1.3.
+- Add a sanitized example of OGM graph/table notes and updated PR discussion.
 - Add optional VS Code task files for common workflows.
 
 ## Uploading to GitHub

@@ -52,6 +52,7 @@ Before drafting, confirm:
 - Current model documentation.
 - Current-cycle 1LOD ongoing monitoring materials.
 - Current-cycle 2LOD ongoing monitoring assessment, preferably named `INV_XXXX_OGM_2LOD_Assessment.docx`.
+- Graph/table notes included in the 2LOD OGM assessment or a companion notes file, if any.
 - Findings appendix or finding descriptions, if applicable.
 - Management responses or remediation updates, if applicable.
 - Target section to update first.
@@ -76,6 +77,19 @@ If the user already provided these answers, proceed using the provided informati
 - Use current-cycle testing evidence only where applicable.
 - Clearly distinguish current-cycle evidence from prior-cycle template language.
 - If evidence is missing, ask for it or identify the gap in the draft notes.
+
+## Graph and Table Handling
+
+For OGM graphs, charts, tables, screenshots, or monitoring exhibits, prefer reviewer-interpreted notes in the 2LOD OGM assessment file over independent visual inference.
+
+If the 2LOD assessment includes pasted exhibits and notes:
+
+- Use the notes as the primary source for what the exhibit means.
+- Carry forward the reviewer's stated metric, period, threshold, result, breach/exception status, management explanation, 2LOD assessment, and recommended PR language.
+- Ask whether the exhibit should be included in the PR report, used only to support narrative discussion, refreshed from a prior-report exhibit, replaced, or removed.
+- Do not claim a trend, breach, pass/fail result, or conclusion unless it is supported by the notes or underlying evidence.
+
+Use `templates/ogm_graph_table_notes_template.md` when the user needs a structure for capturing exhibit notes.
 
 ## Output Rules
 

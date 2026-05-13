@@ -6,6 +6,8 @@ Use this skill to draft or update PR Section 2.1.6 and any ongoing monitoring su
 
 This skill should rely heavily on current-cycle 1LOD ongoing monitoring materials and the 2LOD assessment file.
 
+If the 2LOD assessment file includes pasted graphs, charts, tables, screenshots, or reviewer notes, treat the reviewer's notes as the primary interpreted evidence for graph/table discussion. Do not independently infer the meaning of a visual exhibit unless the user explicitly asks. Use the reviewer's stated assessment, thresholds, breaches, explanations, and recommended PR language as the basis for report drafting.
+
 ## When to Use
 
 Use this skill for:
@@ -37,6 +39,7 @@ Confirm the following:
 9. Breaches, exceptions, overrides, or adjustments.
 10. Relevant findings or observations.
 11. Whether the prior conclusion is expected to remain the same.
+12. Graph/table notes for relevant OGM exhibits, if any.
 
 ## Initial Questions
 
@@ -47,6 +50,7 @@ Ask:
 3. "Are there any additional key discussion points beyond the prior PR report?"
 4. "Were there any threshold breaches, exceptions, overrides, output adjustments, or missing tests?"
 5. "Are there any relevant findings related to ongoing monitoring?"
+6. "Does the 2LOD assessment include pasted graphs, tables, or reviewer notes that should be used to update PR graph/table discussion?"
 
 If the user already provided the answers, proceed without asking again.
 
@@ -82,6 +86,22 @@ For each test, identify:
 - MR conclusion.
 - Any limitation, gap, or compensating control.
 - Finding impact, if any.
+- Relevant graph/table notes, if any.
+- Whether any prior-report graph or table should be refreshed, replaced, removed, or discussed only in narrative.
+
+## Graph and Table Discussion Logic
+
+Use `templates/ogm_graph_table_notes_template.md` when graph/table notes need to be created or organized.
+
+When graph/table notes are provided in the 2LOD assessment:
+
+- Treat the notes as reviewer-interpreted evidence.
+- Identify the relevant PR section and monitoring test.
+- Use the stated metric, threshold, result, breach/exception status, management explanation, and 2LOD assessment.
+- Update narrative discussion to reflect the current-cycle exhibit.
+- If the prior PR report included a related graph/table, state whether the exhibit should be refreshed, replaced, removed, or discussed only in narrative when the user provided that direction.
+- Do not claim a trend, improvement, deterioration, pass, failure, breach, or exception unless supported by the notes or underlying evidence.
+- Do not include visual formatting instructions unless the user asks for report production support.
 
 ## Drafting Logic
 

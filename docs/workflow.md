@@ -99,6 +99,8 @@ Use:
 - `templates/section_update_prompt.md` for Sections 2.1.1 through 2.1.5, 2.1.7, and 2.1.8.
 - `templates/ogm_prompt.md` for Section 2.1.6.
 
+For OGM graphs and tables, use the 2LOD OGM assessment as the guided source. Paste important exhibits into the 2LOD assessment file and add reviewer notes using `templates/ogm_graph_table_notes_template.md`. The agent should use those notes to update the PR discussion instead of guessing from visual appearance alone.
+
 Recommended reviewed section filenames:
 
 ```text

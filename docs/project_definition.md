@@ -38,6 +38,7 @@ This repository should contain reusable workflow assets only:
 - Output folder scaffolding.
 - Safe local input folder examples.
 - Lightweight helper scripts.
+- OGM graph/table notes for reviewer-interpreted exhibit discussion.
 
 Do not commit confidential model reports, production data, finding appendices, model documentation, or bank/internal evidence.
 
@@ -79,3 +80,9 @@ cp -R local_inputs.example local_inputs
 ```
 
 The real `local_inputs/` folder is ignored by git.
+
+## Graph and Table Discussion
+
+The preferred workflow is to place important OGM graphs and tables in the 2LOD OGM assessment file along with reviewer notes. The notes should explain the metric, period, threshold, result, breach or exception status, management explanation, 2LOD assessment, and recommended PR language.
+
+This keeps graph/table interpretation under reviewer control and gives the agent a clear evidence basis for updating PR report discussion.

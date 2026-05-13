@@ -22,6 +22,7 @@
 - Current model documentation path:
 - 1LOD ongoing monitoring materials path:
 - 2LOD ongoing monitoring assessment path:
+- OGM graph/table notes path, if separate from 2LOD assessment:
 - Findings appendix or finding descriptions path:
 - Management response or remediation update path:
 - Prior validation report path, if useful:
@@ -82,6 +83,8 @@
 - Required ongoing monitoring tests:
 - Testing period:
 - Breaches, exceptions, overrides, or output adjustments:
+- Graph/table notes included in 2LOD assessment? Yes / No
+- Exhibits to include, refresh, replace, remove, or discuss only in narrative:
 - Additional key discussion points:
 - Relevant findings or observations:
 - Should prior conclusion remain the same?

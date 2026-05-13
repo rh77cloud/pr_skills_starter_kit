@@ -55,6 +55,7 @@ pr_skills_starter_kit/
 │   └── assemble_report.py
 ├── templates/
 │   ├── intake_template.md
+│   ├── ogm_graph_table_notes_template.md
 │   ├── section_update_prompt.md
 │   ├── ogm_prompt.md
 │   └── risk_rating_prompt.md
